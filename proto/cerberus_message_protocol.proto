@@ -1,0 +1,74 @@
+package updateMessage;
+
+message Update {
+  
+  required string hostname = 1;
+  required string serial = 2;
+
+  enum CommandType {
+    HEL = 0;
+    CHAL = 1;
+    REG = 2; 
+    ACK = 3;
+    DATA = 4;
+    SREG = 7;
+    CMND = 8;
+    EVNT = 9;
+  }
+
+  enum EventType{
+    ASTART = 0;
+    ASTOP = 1;
+    USTART = 2;
+    USTOP = 3;
+    ALARM = 5;
+    CRASH = 6; 
+    INFO  = 7;
+    WARN  = 8;
+  }
+
+  enum Cspecific {
+    CMD1 = 0;
+    CMD2 = 1;
+    CMD3 = 2; 
+    CMD4 = 3;
+    CMD5 = 4;
+    CMD6 = 7;
+    CMD7 = 8;
+    CMD8 = 9;
+    CMD9 = 10;
+    CMD10 = 11; 
+  }
+
+
+
+  required CommandType cmnd = 3 [default = HEL];
+  optional EventType code = 4 [default = ASTART];
+  optional string cpu = 5;
+  optional string memfree = 6;
+  optional string memused = 7;
+  optional string cachesize = 8;
+  optional string bytestx = 9;
+  optional string bytesrx = 10;
+  optional string bytestotal = 11;
+  optional string txrate = 12;
+  optional string rxrate = 13;
+  optional string totalrate = 14;
+  optional string ipaddr = 15;
+  optional Cspecific cstring = 16 [default = CMD1];
+  optional string connections = 17;
+  optional string _messagepayload = 18;
+  optional string location = 19;
+  optional string role = 20;
+  optional string eth0rxs = 21;
+  optional string eth0txs = 22;
+  optional string eth0total = 23;
+  optional string eth1txs = 24;
+  optional string eth1rxs = 25;
+  optional string eth1total = 26;
+  optional string datacenter = 27;
+  optional string wan = 28;
+  optional string lan = 29;
+
+
+}

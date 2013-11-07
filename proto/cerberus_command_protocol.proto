@@ -1,0 +1,46 @@
+package commandMessage;
+
+message Command {
+  
+  required string id = 1;
+	required string serial = 2;
+	optional string role = 3;
+    
+    enum CmndType {
+    	CACHE  = 1;
+    	REDIS  = 2;
+    	NGINX  = 3; 
+    	SYSTEM = 4;
+  	}
+
+  	enum CacheCmnd {
+  		CLRURL = 1;
+  		CLRALL = 2;
+  	}
+
+  	enum NginxCmnd{
+  		RESTART = 1;
+  	}
+
+  	enum RedisCmnd {
+  		CLRIP   = 1;
+  		CLRUID  = 2;
+  	}
+
+  	enum SystemCmnd {
+  		SYNC   = 1;
+  		REBOOT  = 2;
+  	}
+
+
+  	optional string domain = 4;
+  	optional string cachekey = 5;
+  	optional string ip = 6;
+  	optional string uuid = 7;
+    optional CmndType cmdtype = 8 [default = CACHE];
+    optional CacheCmnd cchcmd = 9 [default = CLRURL];
+
+
+
+
+}

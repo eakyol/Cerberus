@@ -1,0 +1,24 @@
+package deploy;
+
+message Register {
+
+	optional string hostname = 1;
+	optional string role = 2;
+	optional string wan = 3;
+	optional string lan = 4;
+	optional string serial = 5;
+	optional string key = 6;
+	optional string iv = 7;
+	optional string datacenter_id = 8;
+	optional string monitor_server_ip = 9;
+	optional string command_port = 10;
+	optional string local_event_port = 11;
+	optional string monitor_data_port = 12;
+	optional string private_key = 13;
+	optional string public_key = 14;
+	optional string account_id = 15;
+	optional string redismaster_ip = 16;
+	optional string redismaster_pass = 17;
+	optional string private = 18;
+
+}

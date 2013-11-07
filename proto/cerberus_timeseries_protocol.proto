@@ -1,0 +1,19 @@
+package requestBufferMessage;
+
+message bufferMessage{
+	
+	required string domain_id = 1;
+	required string timestamp = 2;
+	required string http_referer = 3;
+	required string http_user_agent = 4;
+	required string geoip_country_code = 5;
+	required string request_method = 6;
+	required string request_resource = 7;
+	required string violations = 8;
+	required string valid_ajax = 9;
+	required string unique_id = 10;
+	required string informed_id = 11;
+	required string primitive_id = 12;
+	required string ip = 13;
+
+}
